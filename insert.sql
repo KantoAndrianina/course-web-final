@@ -27,26 +27,16 @@ create or replace view v_liste_etape_details as
     JOIN v_equipes eq ON eq.id = c.equipe_id;
 
 INSERT INTO categories (nom)
-    SELECT 'Homme'
-    WHERE NOT EXISTS (
-        SELECT 1
-        FROM categories
-        WHERE nom = 'Homme'
-    );
+    SELECT 'Homme' FROM dual
+    WHERE NOT EXISTS (SELECT 1 FROM categories WHERE nom = 'Homme');
+
 INSERT INTO categories (nom)
-    SELECT 'Femme'
-    WHERE NOT EXISTS (
-        SELECT 1
-        FROM categories
-        WHERE nom = 'Femme'
-    );
+    SELECT 'Femme' FROM dual
+    WHERE NOT EXISTS (SELECT 1 FROM categories WHERE nom = 'Femme');
+
 INSERT INTO categories (nom)
-    SELECT 'Junior'
-    WHERE NOT EXISTS (
-        SELECT 1
-        FROM categories
-        WHERE nom = 'Junior'
-    );
+    SELECT 'Junior' FROM dual
+    WHERE NOT EXISTS (SELECT 1 FROM categories WHERE nom = 'Junior');
 
 create or replace view v_categorie_coureurs as
     select c.id id_coureur, c.nom nom_coureur, numero, genre, date_naissance, cat.id id_categorie, cat.nom nom_categorie

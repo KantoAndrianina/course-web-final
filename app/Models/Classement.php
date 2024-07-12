@@ -69,31 +69,31 @@ class Classement extends Model
     
     public static function getClassementGEtape()
     {
-        // $classeG = DB::select('SELECT nom_etape, nom_coureur,nom_equipe,duree,penalite,temps_final, points
-        // from v_classement_general_penalites 
-        //  GROUP BY nom_coureur, rang_etape, nom_etape,nom_equipe,duree, penalite,temps_final, points
-        // ORDER BY  rang_etape, temps_final ASC');
+        $classeG = DB::select('SELECT nom_etape, nom_coureur,nom_equipe,duree,penalite,temps_final, points
+        from v_classement_general_penalites 
+         GROUP BY nom_coureur, rang_etape, nom_etape,nom_equipe,duree, penalite,temps_final, points
+        ORDER BY  rang_etape, temps_final ASC');
 
-        $classeG = DB::select("
-        SELECT nom_etape, 
-            nom_coureur, 
-            nom_equipe, 
-            duree, 
-            penalite, 
-            temps_final, 
-            points
-        FROM v_classement_general_penalites
-        GROUP BY nom_coureur, 
-                rang_etape, 
-                nom_etape, 
-                nom_equipe, 
-                duree, 
-                penalite, 
-                temps_final, 
-                points
-        ORDER BY rang_etape COLLATE utf8mb4_bin, 
-                temps_final COLLATE utf8mb4_bin ASC
-        ");
+        // $classeG = DB::select("
+        // SELECT nom_etape, 
+        //     nom_coureur, 
+        //     nom_equipe, 
+        //     duree, 
+        //     penalite, 
+        //     temps_final, 
+        //     points
+        // FROM v_classement_general_penalites
+        // GROUP BY nom_coureur, 
+        //         rang_etape, 
+        //         nom_etape, 
+        //         nom_equipe, 
+        //         duree, 
+        //         penalite, 
+        //         temps_final, 
+        //         points
+        // ORDER BY rang_etape COLLATE utf8mb4_bin, 
+        //         temps_final COLLATE utf8mb4_bin ASC
+        // ");
 
         return $classeG;
     }

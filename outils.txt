@@ -1,0 +1,17 @@
+Compte Kanto
+
+Lien site 
+https://apps6.123mada.com/
+
+FTP
+ftp.123mada.com
+apps6@123mada.com
+&e,7lGghBcuE
+
+Phpmyadmin
+https://apps6.123mada.com/my6280
+
+Host: localhost
+bdd : madaebvx_apps6
+User : madaebvx_apps6
+pwd:    $;W-5AY##%!(
