@@ -28,9 +28,7 @@
           {{ Auth::user()->name }}</a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
             
-            <x-dropdown-link :href="route('profile.edit')" class="dropdown-item">
-            <i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i>{{ __('Profile') }}
-            </x-dropdown-link>
+           
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 

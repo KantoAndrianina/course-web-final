@@ -6,6 +6,9 @@ $equipe_id=Session::get('equipe_id');
 ?>
 
 @extends('layouts.app_front')
+
+@section('titre', 'UTR - Classement par équipe')
+
 @section('content')
     <div class="container">
     <table class="table table-striped table-hover">

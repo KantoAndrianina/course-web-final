@@ -6,6 +6,9 @@ $equipe_id=Session::get('equipe_id');
 ?>
 
 @extends('layouts.app_front')
+
+@section('titre', 'UTR - Toutes les étapes')
+
 @section('content')
 
 

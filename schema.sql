@@ -103,3 +103,10 @@ CREATE TABLE penalites (
     FOREIGN KEY (etape_id) REFERENCES etapes(id),
     FOREIGN KEY (equipe_id) REFERENCES equipes(id)
 );
+
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(255),
+    description TEXT,
+    slug VARCHAR(255)
+);

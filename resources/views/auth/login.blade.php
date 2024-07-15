@@ -17,7 +17,7 @@ $url = config('app.url');
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>BTP Construction </title>
+  <title>UTR - Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo $url ?>/assets_dash/vendors/feather/feather.css">
   <link rel="stylesheet" href="<?php echo $url ?>/assets_dash/vendors/mdi/css/materialdesignicons.min.css">

@@ -7,6 +7,7 @@ use App\Http\Controllers\dashController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\ClassementController;
 use App\Http\Controllers\ImportController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,11 @@ use App\Http\Controllers\ImportController;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('front.accueil');
+// })->name('accueil');
+Route::get('/', [PostController::class, 'accueil'])->name('accueil');
+Route::get('/login-equipe', function () {
     return view('welcome');
 })->name('welcome');
 // Route::redirect('/', '/loginClients');
@@ -91,4 +96,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/certificat-equipe-categorie/{id_cat}', [EquipeController::class, 'afficherCertificatCategorie'])->name('equipe.certificat.categorie');
 
 
+    Route::get('/creer-article', [PostController::class, 'creerArticle'])->name('creer.article');
+    Route::post('/store-post', [PostController::class, 'store'])->name('editor.store');
+    Route::get('/article/{slug}', [PostController::class, 'show'])->name('article.show');
+
+    // Route::post('/test', function () {
+    //         return view('test');
+    //     })->name('editor.store');
     require __DIR__.'/auth.php';

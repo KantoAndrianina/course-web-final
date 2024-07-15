@@ -50,7 +50,7 @@ class EquipeController extends Controller
     {
         Session::forget('equipe_id');
 
-        return redirect()->route('welcome')->with('success', 'Déconnexion réussie.');
+        return redirect()->route('accueil')->with('success', 'Déconnexion réussie.');
     }
     public function listeEtapeDetails(Request $request)
     {
