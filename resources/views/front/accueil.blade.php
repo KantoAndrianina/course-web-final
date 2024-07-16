@@ -11,25 +11,30 @@ $url = config('app.url');
         <div class="row mt-5 pt-5">
             <div class="col-md-12">
                 @if(count($posts) > 0)
-                <h1>Tous les articles</h1>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    @foreach($posts as $post)
-                    <div class="col mb-4">
-                        <div class="card h-100">
-                            <div class="card-header">
-                                <h5 class="card-title"><a href="{{ route('article.show', ['slug' => $post->slug]) }}">{{ $post->titre }}</a></h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">{!! $post->description !!}</p>
+                    <h1>Tous les articles</h1>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        @foreach($posts as $post)
+                        <div class="col mb-4">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title">
+                                        <a href="{{ route('article.show', ['slug' => $post->slug]) }}">{{ $post->titre }}</a>
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">{!! $post->description !!}</p>
+                                </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
-                </div>
+                @else
+                    <h2>Il n'y a pas encore d'articles, <a href="{{ route('creer.article') }}">créez-en un dès maintenant</a>.</h2>
                 @endif
             </div>
         </div>
     </div>
+
 
     <script src="<?php echo $url ?>/assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/froala_editor.pkgd.min.js') }}"></script>
